@@ -1,0 +1,46 @@
+body {
+    background-color: white;
+    font-family: 'Lato', sans-serif;
+    text-align:center;
+}
+h3 {
+    color: #270A01;
+}
+footer{
+    background-color: #02031D;
+    padding-top: 50px;
+    color: blanchedalmond;
+}
+
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;   
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 5% 0;
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+.custab:hover{
+    box-shadow: 3px 3px 0px transparent;
+    transition: 0.5s;
+    }

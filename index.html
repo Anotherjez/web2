@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 2</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body onload="LoadData();">
+    <script src="./js/index.js"></script>
+    <div class="container" style="padding-top: 50px;">
+
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Contactos</h4>
+
+                <p class="divider-text">
+                    <span class="bg-light"></span>
+                </p>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                     </div>
+                    <input name="" class="form-control" placeholder="Nombre" type="text" id="name">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                     </div>
+                    <input name="" class="form-control" placeholder="Apellido" type="text" id="lastname">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Numero de telefono" type="text" id="number">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                     </div>
+                    <input name="" class="form-control" placeholder="Correo electronico" type="email" id="email">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-id-card"></i> </span>
+                     </div>
+                    <input name="" class="form-control" placeholder="Cedula" type="text" id="cedula">
+                </div> <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-calendar-alt"></i> </span>
+                     </div>
+                    <input name="" class="form-control" placeholder="Fecha de nacimiento" type="date" id="birthdate">
+                </div> <!-- form-group// -->                                      
+                            
+                    <button  onclick="SaveEdit()" class="btn btn-primary btn-block"> Guardar  </button>
+                
+                    <button  onclick="NewContact()" class="btn btn-primary btn-block"> Nuevo  </button>
+             </article>
+            </div>    
+            
+            <!-- Tabla -->
+            <div class="row col-md-6 col-md-offset-2 custyle">
+                <table class="table table-striped custab">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                    <th>Cedula</th>
+                    <th>Fecha</th>
+                    <th>Zodiaco</th>
+                    <th class="text-center">Accion</th>
+                </tr>
+            </thead>
+            <tbody id="tbData">
+
+            </tbody>
+                </table>
+            </div>
+        </div> 
+    </body>
+</html>

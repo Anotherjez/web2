@@ -83,8 +83,12 @@ if (typeof(Storage) !== "undefined") {
             tr.appendChild(td);
             
             td = document.createElement('td');
+            td.innerHTML = GetZodiac(p.date);
+            tr.appendChild(td);
+            
+            td = document.createElement('td');
             td.setAttribute('class','text-center');
-            td.innerHTML = "<a class='btn btn-info btn-xs' onclick='EditContact(this)'><span class='far fa-edit'></span> Editar</a> <a onclick='DeleteContact(this)' class='btn btn-danger btn-xs'><span class='far fa-trash-alt'></span> Eliminar</a>";
+            td.innerHTML = "<a class='btn btn-info btn-xs' style='color: azure;' onclick='EditContact(this)'><span class='far fa-edit'></span> Editar</a> <a onclick='DeleteContact(this)' style='color: azure;' class='btn btn-danger btn-xs'><span class='far fa-trash-alt'></span> Eliminar</a>";
             tr.appendChild(td);
 
             table.appendChild(tr);
@@ -98,6 +102,14 @@ if (typeof(Storage) !== "undefined") {
             personas.splice(index, 1);
             tr.parentNode.removeChild(tr);
             SaveData();
+            ShowContacts();
+        }
+    }
+    function DeleteAll(){
+        if(confirm('¿Esta seguro que desea eliminar todos los registros?')){
+            personas = [];
+            SaveData();
+            ShowContacts();
         }
     }
 
@@ -122,7 +134,7 @@ if (typeof(Storage) !== "undefined") {
         var tel = document.getElementById('number').value;
         var email = document.getElementById('email').value;
         var id = document.getElementById('cedula').value;
-        var date = document.getElementById('birthdate').value;
+        var date = document.getElementById('birthdate').value;        
         //Add person to array
         personas[editIndex] = new Persona(name,last,tel,email,id,date);
 
@@ -131,8 +143,48 @@ if (typeof(Storage) !== "undefined") {
         ShowContacts();
     }
 
-    function GetZodiac(){
-        
+    function GetZodiac(date){
+        var zodiac = new Date(date);
+        month = zodiac.getMonth();
+        day = zodiac.getDate();
+
+        //Aries
+        if(month == 2 && day >= 21 || month == 3 && day <= 20){
+            return "Aries";
+        }//Taurus
+        else if(month == 3 && day >= 21 || month == 4 && day <= 20){
+            return "Tauro";
+        }//Gemini
+        else if(month == 4 && day >= 21 || month == 5 && day <= 21){
+            return "Geminis";
+        }//Cancer
+        else if(month == 5 && day >= 22 || month == 6 && day <= 22){
+            return "Cancer";
+        }//Leo
+        else if(month == 6 && day >= 23 || month == 7 && day <= 22){
+            return "Leo";
+        }//Virgo
+        else if(month == 7 && day >= 23 || month == 8 && day <= 22){
+            return "Virgo";
+        }//Libra
+        else if(month == 8 && day >= 23 || month == 9 && day <= 22){
+            return "Libra";
+        }//Escorpio
+        else if(month == 9 && day >= 23 || month == 10 && day <= 22){
+            return "Escorpio";
+        }//Sagittarius
+        else if(month == 10 && day >= 23 || month == 11 && day <= 21){
+            return "Sagitario";
+        }//Capricornus
+        else if(month == 11 && day >= 22 || month == 0 && day <= 20){
+            return "Capricornio";
+        }//Aquarius
+        else if(month == 0 && day >= 21 || month == 1 && day <= 18){
+            return "Acuario";
+        }//Piscis
+        else if(month == 1 && day >= 19 || month == 2 && day <= 20){
+            return "Piscis";
+        }
     }
 
   } else {

@@ -10,6 +10,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico"/>
 </head>
 <body onload="LoadData();">
     <script src="./js/index.js"></script>
@@ -66,11 +67,11 @@
             </div>    
             
             <!-- Tabla -->
-            <div class="row col-md-6 col-md-offset-2 custyle">
+            <div class="row row-md-6 row-md-offset-2 custyle">
                 <table class="table table-striped custab">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
                     <th>Apellido</th>
                     <th>Telefono</th>
                     <th>Email</th>
@@ -81,10 +82,17 @@
                 </tr>
             </thead>
             <tbody id="tbData">
-
+                
             </tbody>
-                </table>
-            </div>
+        </table>
+        <button  onclick="DeleteAll()" class="btn btn-warning" style="margin-bottom: 40px;">Borrar todos los datos</button>
+    </div>
         </div> 
+
+        <footer>
+            <a href="https://es.wikipedia.org/wiki/Zodiaco#Tabla_de_fechas">Signos del Zodiaco</a>
+            <center>Jesus Mercado Jimenez - 20186970</center>
+            <center>&copy; Copyright - 2020</center>
+        </footer>
     </body>
 </html>
